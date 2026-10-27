@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HemaApp — Pantau Hb, Cegah Anemia</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="logo">H</div>
+          <div>
+            <div class="brand-name">Hema<span>App</span></div>
+            <div class="brand-sub">Teman sehatmu setiap hari</div>
+          </div>
+        </div>
+        <div>
+          <div class="nav-label">MENU UTAMA</div>
+          <nav class="nav" id="nav">
+            <button class="active" data-page="home"><span class="ico">⌂</span>Beranda</button>
+            <button data-page="hb"><span class="ico">♥</span>Hb Tracker</button>
+            <button data-page="ttd"><span class="ico">⏰</span>Pengingat TTD</button>
+            <button data-page="education"><span class="ico">✚</span>Edukasi Gizi</button>
+            <button data-page="schedule"><span class="ico">▦</span>Jadwal Pemeriksaan</button>
+            <button data-page="ask"><span class="ico">☏</span>Tanya Hema</button>
+          </nav>
+        </div>
+        <div class="side-note">
+          <strong>♥ Ingat, ya!</strong>HemaApp membantu mencatat dan memberikan edukasi. Untuk
+          diagnosis dan saran pengobatan, tetap konsultasikan dengan tenaga kesehatan.
+        </div>
+      </aside>
+      <main>
+        <header class="topbar">
+          <div>
+            <div class="eyebrow">HEALTH • NUTRITION • CARE</div>
+            <h1 id="pageHeading">Selamat datang di HemaApp!</h1>
+          </div>
+          <div class="profile">
+            <div class="avatar">HA</div>
+            <div>
+              <strong>Pengguna HemaApp</strong><small>Jaga kesehatan, mulai dari sekarang</small>
+            </div>
+          </div>
+        </header>
+
+        <section class="page active" id="page-home">
+          <div class="hero">
+            <div class="hero-copy">
+              <span class="pill">✦ Teman pencegahan anemia</span>
+              <h2>Pantau Hb, Cegah Anemia,<br />Wujudkan Generasi Sehat!</h2>
+              <p>
+                Catat hasil pemeriksaan hemoglobin, atur pengingat Tablet Tambah Darah, dan pelajari
+                kebiasaan gizi yang lebih baik dalam satu tempat.
+              </p>
+              <button class="btn-white" data-goto="hb">Mulai pantau Hb&nbsp; →</button>
+            </div>
+            <div class="hero-art">🩸</div>
+          </div>
+          <div class="section-head">
+            <div>
+              <h3>Ringkasan kesehatan</h3>
+              <p>Data yang kamu catat di HemaApp</p>
+            </div>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-top">Catatan Hb <span class="stat-icon">♥</span></div>
+              <div>
+                <div class="stat-value" id="statHb">0</div>
+                <div class="stat-foot">riwayat pemeriksaan tersimpan</div>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-top">Pengingat TTD <span class="stat-icon">⏰</span></div>
+              <div>
+                <div class="stat-value" id="statTtd">0</div>
+                <div class="stat-foot">jadwal yang kamu buat</div>
+              </div>
+            </div>
+            <div class="stat">
+              <div class="stat-top">Jadwal cek kesehatan <span class="stat-icon">▦</span></div>
+              <div>
+                <div class="stat-value" id="statSchedule">0</div>
+                <div class="stat-foot">jadwal pemeriksaan tersimpan</div>
+              </div>
+            </div>
+          </div>
+          <div class="content-grid">
+            <div>
+              <div class="section-head">
+                <div>
+                  <h3>Fitur HemaApp</h3>
+                  <p>Pilih fitur sesuai kebutuhanmu</p>
+                </div>
+              </div>
+              <div class="feature-grid">
+                <div class="feature-card" data-goto="hb">
+                  <div class="feature-icon">♥</div>
+                  <h4>Hb Tracker</h4>
+                  <p>Simpan dan lihat riwayat hasil pemeriksaan Hb.</p>
+                </div>
+                <div class="feature-card" data-goto="ttd">
+                  <div class="feature-icon">⏰</div>
+                  <h4>Pengingat TTD</h4>
+                  <p>Buat jadwal dan tandai konsumsi tablet.</p>
+                </div>
+                <div class="feature-card" data-goto="education">
+                  <div class="feature-icon">🥗</div>
+                  <h4>Edukasi Gizi</h4>
+                  <p>Kenali anemia dan makanan sumber zat besi.</p>
+                </div>
+                <div class="feature-card" data-goto="schedule">
+                  <div class="feature-icon">🗓️</div>
+                  <h4>Jadwal Pemeriksaan</h4>
+                  <p>Catat rencana kunjungan ke fasilitas kesehatan.</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="section-head">
+                <div>
+                  <h3>Pengingat kamu</h3>
+                  <p>Jadwal TTD terbaru</p>
+                </div>
+                <button class="text-button" data-goto="ttd">Lihat semua</button>
+              </div>
+              <div class="panel" id="homeReminders">
+                <div class="empty">
+                  Belum ada pengingat. Kamu bisa membuatnya di menu Pengingat TTD.
+                </div>
+              </div>
+              <div class="panel">
+                <div class="panel-head">
+                  <h3>Tips singkat hari ini</h3>
+                  <span>EDUKASI</span>
+                </div>
+                <div style="font-size: 12px; line-height: 1.7; color: var(--muted)">
+                  Konsumsi makanan beragam, termasuk sumber zat besi seperti ikan, telur, daging,
+                  kacang-kacangan, dan sayuran hijau. Vitamin C dapat membantu penyerapan zat besi
+                  dari makanan.
+                </div>
+                <button class="text-button" style="padding: 12px 0 0" data-goto="education">
+                  Baca edukasi →
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page" id="page-hb">
+          <h2 class="page-title">Hb Tracker</h2>
+          <p class="page-desc">
+            Catat hasil pemeriksaan hemoglobin (Hb) agar riwayatnya lebih mudah dipantau.
+          </p>
+          <div class="panel" style="margin-top: 0">
+            <div class="panel-head">
+              <h3>Tambah hasil pemeriksaan</h3>
+              <span>CATATAN Hb</span>
+            </div>
+            <form id="hbForm">
+              <div class="form-grid">
+                <div class="field">
+                  <label for="hbValue">Hasil Hb (g/dL)</label
+                  ><input
+                    id="hbValue"
+                    type="number"
+                    min="1"
+                    max="30"
+                    step="0.1"
+                    placeholder="Contoh: 12.5"
+                    required
+                  />
+                </div>
+                <div class="field">
+                  <label for="hbDate">Tanggal pemeriksaan</label
+                  ><input id="hbDate" type="date" required />
+                </div>
+                <div class="field">
+                  <label for="hbPlace">Tempat pemeriksaan</label
+                  ><input id="hbPlace" placeholder="Contoh: Puskesmas" required />
+                </div>
+                <div class="field">
+                  <label for="hbNote">Catatan (opsional)</label
+                  ><input id="hbNote" placeholder="Catatan tambahan" />
+                </div>
+              </div>
+              <div class="form-actions"><button class="btn-primary">Simpan hasil Hb</button></div>
+            </form>
+          </div>
+          <div class="notice">
+            Nilai Hb perlu ditafsirkan berdasarkan usia, jenis kelamin, kehamilan, dan standar
+            klinis yang sesuai. HemaApp hanya mencatat hasil yang kamu masukkan dan tidak menetapkan
+            diagnosis.
+          </div>
+          <div class="panel">
+            <div class="panel-head">
+              <h3>Riwayat pemeriksaan</h3>
+              <button class="text-button" id="clearHb">Hapus riwayat</button>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Tanggal</th>
+                    <th>Hasil Hb</th>
+                    <th>Tempat</th>
+                    <th>Catatan</th>
+                  </tr>
+                </thead>
+                <tbody id="hbRows">
+                  <tr>
+                    <td colspan="4" class="empty">Belum ada data pemeriksaan.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="page" id="page-ttd">
+          <h2 class="page-title">Pengingat Tablet Tambah Darah</h2>
+          <p class="page-desc">
+            Atur pengingat sesuai jadwal yang dianjurkan tenaga kesehatan. Tandai saat kamu sudah
+            mengonsumsi TTD.
+          </p>
+          <div class="panel" style="margin-top: 0">
+            <div class="panel-head">
+              <h3>Buat pengingat baru</h3>
+              <span>JADWAL TTD</span>
+            </div>
+            <form id="ttdForm">
+              <div class="form-grid">
+                <div class="field">
+                  <label for="ttdName">Nama pengingat</label
+                  ><input id="ttdName" value="Konsumsi Tablet Tambah Darah" required />
+                </div>
+                <div class="field">
+                  <label for="ttdTime">Waktu</label
+                  ><input id="ttdTime" type="time" value="19:00" required />
+                </div>
+                <div class="field">
+                  <label for="ttdDays">Hari</label
+                  ><select id="ttdDays">
+                    <option>Setiap hari</option>
+                    <option>Senin</option>
+                    <option>Selasa</option>
+                    <option>Rabu</option>
+                    <option>Kamis</option>
+                    <option>Jumat</option>
+                    <option>Sabtu</option>
+                    <option>Minggu</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="ttdNote">Catatan (opsional)</label
+                  ><input id="ttdNote" placeholder="Misalnya: sesuai anjuran petugas" />
+                </div>
+              </div>
+              <div class="form-actions"><button class="btn-primary">Simpan pengingat</button></div>
+            </form>
+          </div>
+          <div class="panel">
+            <div class="panel-head">
+              <h3>Daftar pengingat</h3>
+              <span id="ttdCount">0 jadwal</span>
+            </div>
+            <div id="ttdList"><div class="empty">Belum ada pengingat yang dibuat.</div></div>
+          </div>
+          <div class="notice">
+            Jadwal di website ini hanya membantu mengingatkan. Ikuti petunjuk tenaga kesehatan
+            terkait penggunaan Tablet Tambah Darah.
+          </div>
+        </section>
+
+        <section class="page" id="page-education">
+          <h2 class="page-title">Edukasi Gizi & Anemia</h2>
+          <p class="page-desc">
+            Informasi dasar untuk membantu kamu mengenali anemia dan menjaga pola makan bergizi
+            seimbang.
+          </p>
+          <div class="education-grid">
+            <article class="article">
+              <div class="article-emoji">🩸</div>
+              <h3>Apa itu anemia?</h3>
+              <p>
+                Anemia adalah kondisi ketika kadar hemoglobin dalam darah berada di bawah batas
+                normal sesuai usia, jenis kelamin, dan kondisi seseorang. Hemoglobin membantu
+                membawa oksigen ke seluruh tubuh.
+              </p>
+            </article>
+            <article class="article">
+              <div class="article-emoji">🔎</div>
+              <h3>Penyebab dan tanda</h3>
+              <p>
+                Kekurangan zat besi dapat menjadi salah satu penyebab anemia. Keluhan yang bisa
+                muncul antara lain mudah lelah, lemas, pusing, atau sulit berkonsentrasi. Gejala
+                saja tidak cukup untuk memastikan diagnosis.
+              </p>
+            </article>
+            <article class="article">
+              <div class="article-emoji">🥗</div>
+              <h3>Makanan sumber zat besi</h3>
+              <ul>
+                <li>Daging dan ikan</li>
+                <li>Telur dan kacang-kacangan</li>
+                <li>Sayuran hijau</li>
+                <li>Makanan beragam sesuai kebutuhan tubuh</li>
+              </ul>
+            </article>
+            <article class="article">
+              <div class="article-emoji">🍊</div>
+              <h3>Peran vitamin C</h3>
+              <p>
+                Vitamin C dapat membantu penyerapan zat besi dari makanan nabati. Buah seperti
+                jeruk, jambu biji, dan pepaya bisa menjadi pilihan dalam pola makan beragam.
+              </p>
+            </article>
+            <article class="article">
+              <div class="article-emoji">💊</div>
+              <h3>Tablet Tambah Darah</h3>
+              <p>
+                Konsumsi TTD sesuai anjuran tenaga kesehatan atau program kesehatan yang berlaku.
+                Jika mengalami efek samping atau bingung mengenai jadwal, konsultasikan dengan
+                petugas kesehatan.
+              </p>
+            </article>
+            <article class="article">
+              <div class="article-emoji">🏥</div>
+              <h3>Kapan perlu periksa?</h3>
+              <p>
+                Lakukan pemeriksaan sesuai jadwal dan saran tenaga kesehatan. Jika hasil Hb rendah
+                atau ada keluhan yang mengkhawatirkan, konsultasikan ke fasilitas pelayanan
+                kesehatan.
+              </p>
+            </article>
+          </div>
+          <div class="notice">
+            Materi ini bersifat edukasi umum, bukan diagnosis atau pengganti konsultasi dengan
+            dokter, bidan, ahli gizi, atau tenaga kesehatan lainnya.
+          </div>
+        </section>
+
+        <section class="page" id="page-schedule">
+          <h2 class="page-title">Jadwal Pemeriksaan</h2>
+          <p class="page-desc">
+            Catat rencana pemeriksaan Hb, kunjungan puskesmas, atau konsultasi tenaga kesehatan.
+          </p>
+          <div class="panel" style="margin-top: 0">
+            <div class="panel-head">
+              <h3>Tambah jadwal</h3>
+              <span>PEMERIKSAAN</span>
+            </div>
+            <form id="scheduleForm">
+              <div class="form-grid">
+                <div class="field">
+                  <label for="scName">Jenis pemeriksaan/kegiatan</label
+                  ><input id="scName" placeholder="Contoh: Pemeriksaan Hb" required />
+                </div>
+                <div class="field">
+                  <label for="scDate">Tanggal</label><input id="scDate" type="date" required />
+                </div>
+                <div class="field">
+                  <label for="scPlace">Tempat</label
+                  ><input id="scPlace" placeholder="Contoh: Puskesmas" required />
+                </div>
+                <div class="field">
+                  <label for="scNote">Catatan (opsional)</label
+                  ><input id="scNote" placeholder="Catatan tambahan" />
+                </div>
+              </div>
+              <div class="form-actions"><button class="btn-primary">Simpan jadwal</button></div>
+            </form>
+          </div>
+          <div class="panel">
+            <div class="panel-head">
+              <h3>Jadwal tersimpan</h3>
+              <span id="scCount">0 jadwal</span>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Tanggal</th>
+                    <th>Kegiatan</th>
+                    <th>Tempat</th>
+                    <th>Catatan</th>
+                  </tr>
+                </thead>
+                <tbody id="scRows">
+                  <tr>
+                    <td colspan="4" class="empty">Belum ada jadwal.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="page" id="page-ask">
+          <h2 class="page-title">Tanya Hema</h2>
+          <p class="page-desc">
+            Cari informasi umum seputar anemia dan gizi melalui pertanyaan yang tersedia.
+          </p>
+          <div class="chatbox">
+            <div class="chat-head">
+              <div class="logo" style="width: 40px; height: 40px; border-radius: 13px">H</div>
+              <div>
+                <strong>Tanya Hema</strong
+                ><small>Asisten edukasi dasar • bukan layanan diagnosis</small>
+              </div>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+              <div class="bubble">
+                Hai! Aku Tanya Hema. Kamu bisa memilih pertanyaan di bawah untuk membaca informasi
+                umum seputar anemia dan gizi.
+              </div>
+            </div>
+            <div class="chat-input">
+              <input
+                id="chatInput"
+                placeholder="Ketik pertanyaan tentang anemia..."
+                aria-label="Pertanyaan"
+              /><button class="btn-primary" id="sendChat">Kirim</button>
+            </div>
+          </div>
+          <div class="section-head">
+            <div>
+              <h3>Pertanyaan populer</h3>
+              <p>Pilih topik untuk memulai</p>
+            </div>
+          </div>
+          <div class="feature-grid">
+            <div class="feature-card question" data-question="Apa itu anemia?">
+              <div class="feature-icon">🩸</div>
+              <h4>Apa itu anemia?</h4>
+              <p>Pengertian anemia secara singkat.</p>
+            </div>
+            <div
+              class="feature-card question"
+              data-question="Makanan apa yang mengandung zat besi?"
+            >
+              <div class="feature-icon">🥗</div>
+              <h4>Makanan sumber zat besi</h4>
+              <p>Contoh makanan yang bisa dipilih.</p>
+            </div>
+            <div class="feature-card question" data-question="Apa fungsi Tablet Tambah Darah?">
+              <div class="feature-icon">💊</div>
+              <h4>Fungsi TTD</h4>
+              <p>Informasi umum tentang TTD.</p>
+            </div>
+            <div class="feature-card question" data-question="Kapan saya perlu memeriksa Hb?">
+              <div class="feature-icon">🏥</div>
+              <h4>Kapan periksa Hb?</h4>
+              <p>Ketahui pentingnya pemeriksaan.</p>
+            </div>
+          </div>
+        </section>
+        <div class="footer">
+          HemaApp • Prototipe edukasi kesehatan • Data disimpan di browser perangkat ini
+        </div>
+      </main>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="js/app.js"></script>
+  </body>
+</html>
